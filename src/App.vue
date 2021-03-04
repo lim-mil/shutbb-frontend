@@ -1,19 +1,26 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="columns pt-2">
+      <div class="column is-10 is-offset-1">
+        <Navbar></Navbar>
+        <router-view></router-view>
+      </div>
     </div>
-    <router-view/>
+    <Footer></Footer>
   </div>
 </template>
 
 <style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+  @import "assets/css/base.styl"
+  @import "assets/css/mystyle.styl"
+
 </style>
+
+<script>
+  import Navbar from "./components/Navbar";
+  import Footer from "./components/Footer";
+
+  export default {
+    components: {Navbar, Footer}
+  }
+</script>
